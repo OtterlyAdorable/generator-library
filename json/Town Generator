@@ -1,0 +1,897 @@
+{
+	"name": "Town Generator",
+	"resultPattern": "{var:generateTown}",
+	"variables": {
+		"generateTown":"This is a {TownSize} {Economy} {var:called} with a population of {var:pop}. It {landArrangement}.\nHome Types:\r\t• {var:abodes}\nEconomy Features: \r\t• {var:reqBld}\nOther Buildings:\r\t• {var:buildings}",
+		"abodes": "{var:abode{var:size}{var:abodeNo}}",
+		"abodeTiny1":"{!abodeTiny}",
+		"abodeTiny2":"{var:abodeTiny1}\r\t• {!abodeTiny}",
+		"abodeTiny3":"{var:abodeTiny2}\r\t• {!abodeTiny}",
+		"abodeLittle1":"{!abodeLittle}",
+		"abodeLittle2":"{var:abodeLittle1}\r\t• {!abodeLittle}",
+		"abodeLittle3":"{var:abodeLittle2}\r\t• {!abodeLittle}",
+		"abodeLittle4":"{var:abodeLittle3}\r\t• {!abodeLittle}",
+		"abodeSmall1":"{!abodeSmall}",
+		"abodeSmall2":"{var:abodeSmall1}\r\t• {!abodeSmall}",
+		"abodeSmall3":"{var:abodeSmall2}\r\t• {!abodeSmall}",
+		"abodeSmall4":"{var:abodeSmall3}\r\t• {!abodeSmall}",
+		"abodeSmall5":"{var:abodeSmall4}\r\t• {!abodeSmall}",
+		"abodeMedium1":"{!abodeMedium}",
+		"abodeMedium2":"{var:abodeMedium1}\r\t• {!abodeMedium}",
+		"abodeMedium3":"{var:abodeMedium2}\r\t• {!abodeMedium}",
+		"abodeMedium4":"{var:abodeMedium3}\r\t• {!abodeMedium}",
+		"abodeMedium5":"{var:abodeMedium4}\r\t• {!abodeMedium}",
+		"abodeMedium6":"{var:abodeMedium5}\r\t• {!abodeMedium}",
+		"abodeLarge1":"{!abodeLarge}",
+		"abodeLarge2":"{var:abodeLarge1}\r\t• {!abodeLarge}",
+		"abodeLarge3":"{var:abodeLarge2}\r\t• {!abodeLarge}",
+		"abodeLarge4":"{var:abodeLarge3}\r\t• {!abodeLarge}",
+		"abodeLarge5":"{var:abodeLarge4}\r\t• {!abodeLarge}",
+		"abodeLarge6":"{var:abodeLarge5}\r\t• {!abodeLarge}",
+		"abodeLarge7":"{var:abodeLarge6}\r\t• {!abodeLarge}",
+		"abodeLarge8":"{var:abodeLarge7}\r\t• {!abodeLarge}",
+		"abodeLarge9":"{var:abodeLarge8}\r\t• {!abodeLarge}",
+		"buildings": "{var:bld{var:size}{var:bldNo}}",
+		"bldTiny1":"{!bldTiny}",
+		"bldTiny2":"{var:bldTiny1}\r\t• {!bldTiny}",
+		"bldTiny3":"{var:bldTiny2}\r\t• {!bldTiny}",
+		"bldLittle1":"{!bldLittle}",
+		"bldLittle2":"{var:bldLittle1}\r\t• {!bldLittle}",
+		"bldLittle3":"{var:bldLittle2}\r\t• {!bldLittle}",
+		"bldLittle4":"{var:bldLittle3}\r\t• {!bldLittle}",
+		"bldLittle5":"{var:bldLittle4}\r\t• {!bldLittle}",
+		"bldLittle6":"{var:bldLittle5}\r\t• {!bldLittle}",
+		"bldSmall1":"{!bldSmall}",
+		"bldSmall2":"{var:bldSmall1}\r\t• {!bldSmall}",
+		"bldSmall3":"{var:bldSmall2}\r\t• {!bldSmall}",
+		"bldSmall4":"{var:bldSmall3}\r\t• {!bldSmall}",
+		"bldSmall5":"{var:bldSmall4}\r\t• {!bldSmall}",
+		"bldSmall6":"{var:bldSmall5}\r\t• {!bldSmall}",
+		"bldSmall7":"{var:bldSmall6}\r\t• {!bldSmall}",
+		"bldSmall8":"{var:bldSmall7}\r\t• {!bldSmall}",
+		"bldSmall9":"{var:bldSmall8}\r\t• {!bldSmall}",
+		"bldSmall10":"{var:bldSmall9}\r\t• {!bldSmall}",
+		"bldSmall11":"{var:bldSmall10}\r\t• {!bldSmall}",
+		"bldSmall12":"{var:bldSmall11}\r\t• {!bldSmall}",
+		"bldMedium1":"{!bldMedium}",
+		"bldMedium2":"{var:bldMedium1}\r\t• {!bldMedium}",
+		"bldMedium3":"{var:bldMedium2}\r\t• {!bldMedium}",
+		"bldMedium4":"{var:bldMedium3}\r\t• {!bldMedium}",
+		"bldMedium5":"{var:bldMedium4}\r\t• {!bldMedium}",
+		"bldMedium6":"{var:bldMedium5}\r\t• {!bldMedium}",
+		"bldMedium7":"{var:bldMedium6}\r\t• {!bldMedium}",
+		"bldMedium8":"{var:bldMedium7}\r\t• {!bldMedium}",
+		"bldMedium9":"{var:bldMedium8}\r\t• {!bldMedium}",
+		"bldMedium10":"{var:bldMedium9}\r\t• {!bldMedium}",
+		"bldMedium11":"{var:bldMedium10}\r\t• {!bldMedium}",
+		"bldMedium12":"{var:bldMedium11}\r\t• {!bldMedium}",
+		"bldMedium13":"{var:bldMedium12}\r\t• {!bldMedium}",
+		"bldMedium14":"{var:bldMedium13}\r\t• {!bldMedium}",
+		"bldMedium15":"{var:bldMedium14}\r\t• {!bldMedium}",
+		"bldMedium16":"{var:bldMedium15}\r\t• {!bldMedium}",
+		"bldMedium17":"{var:bldMedium16}\r\t• {!bldMedium}",
+		"bldMedium18":"{var:bldMedium17}\r\t• {!bldMedium}",
+		"bldLarge1":"{!bldLarge}",
+		"bldLarge2":"{var:bldLarge1}\r\t• {!bldLarge}",
+		"bldLarge3":"{var:bldLarge2}\r\t• {!bldLarge}",
+		"bldLarge4":"{var:bldLarge3}\r\t• {!bldLarge}",
+		"bldLarge5":"{var:bldLarge4}\r\t• {!bldLarge}",
+		"bldLarge6":"{var:bldLarge5}\r\t• {!bldLarge}",
+		"bldLarge7":"{var:bldLarge6}\r\t• {!bldLarge}",
+		"bldLarge8":"{var:bldLarge7}\r\t• {!bldLarge}",
+		"bldLarge9":"{var:bldLarge8}\r\t• {!bldLarge}",
+		"bldLarge10":"{var:bldLarge9}\r\t• {!bldLarge}",
+		"bldLarge11":"{var:bldLarge10}\r\t• {!bldLarge}",
+		"bldLarge12":"{var:bldLarge11}\r\t• {!bldLarge}",
+		"bldLarge13":"{var:bldLarge12}\r\t• {!bldLarge}",
+		"bldLarge14":"{var:bldLarge13}\r\t• {!bldLarge}",
+		"bldLarge15":"{var:bldLarge14}\r\t• {!bldLarge}",
+		"bldLarge16":"{var:bldLarge15}\r\t• {!bldLarge}",
+		"bldLarge17":"{var:bldLarge16}\r\t• {!bldLarge}",
+		"bldLarge18":"{var:bldLarge17}\r\t• {!bldLarge}",
+		"bldLarge19":"{var:bldLarge18}\r\t• {!bldLarge}",
+		"bldLarge20":"{var:bldLarge19}\r\t• {!bldLarge}",
+		"bldLarge21":"{var:bldLarge20}\r\t• {!bldLarge}",
+		"bldLarge22":"{var:bldLarge21}\r\t• {!bldLarge}",
+		"bldLarge23":"{var:bldLarge22}\r\t• {!bldLarge}",
+		"bldLarge24":"{var:bldLarge23}\r\t• {!bldLarge}"
+	},
+	"explanation": "A generator for a variety of types and sizes of towns, along with the prominent buildings you would find in that town.",
+	"structure": "The primary 2 functions are Town Size and Town Type.  Everything else is randomized based on one or both of those variables, with sub-tables offering variety so we don't end up with lots of duplicate towns.",
+	"note": "Has a LOT of subtables",
+	"format": "",
+	"bugs": "",
+	"to do": "Always looking for more options for villiage types and applicable buildings. My knowledge of medieval buildings is limited.",
+	"see": "",
+	"date": "2018-05-17",
+	"authors": "@OtterlyAdorable",
+	"sources": "",
+	"genre": "fantasy",
+	"categories": [
+		"world"
+	  ],
+	"tables": [
+		{
+			"name": "TownSize",
+			"entries": [
+			   {
+				  "m": 6,
+				  "v": "tiny",
+					"set": {
+						"pop": "{dice:10d10}",
+						"called":"hamlet",
+						"size":"Tiny",
+						"abodeNo":"{dice:1d2}",
+						"bldNo":"{dice:1d3}"
+					}
+				},
+				{
+				  "m": 8,
+				  "v": "little",
+					"set": {
+						"pop": "{dice:100d10}",
+						"called":"village",
+						"size":"Little",
+						"abodeNo":"{dice:1d3}",
+						"bldNo":"{dice:2d3}"
+					}
+				},
+				{
+				  "m": 6,
+				  "v": "small",
+					"set": {
+						"pop": "{dice:1000d4}",
+						"called":"town",
+						"size":"Small",
+						"abodeNo":"{dice:1d4}",
+						"bldNo":"{dice:4d3}"
+					}
+				},
+				{
+					"m": 3,
+					"v": "medium",
+					"set": {
+						"pop": "{dice:3000d2+1000}",
+						"called":"town",
+						"size":"Medium",
+						"abodeNo":"{dice:1d6}",
+						"bldNo":"{dice:9d2}"
+					}
+				},
+				{	"v": "large",
+					"set": {
+						"pop": "{dice:3000d2+4000}",
+						"called":"town",
+						"size":"Large",
+						"abodeNo":"{dice:1d9}",
+						"bldNo":"{dice:8d3}"
+					}
+				}
+			]
+		},
+		{
+			"name": "abodeTiny",
+			"entries": [
+				"huts",
+				"hovels",
+				"shacks",
+				"stick and straw huts"
+			]
+		},
+		{
+			"name": "abodeLittle",
+			"entries": [
+				"{!abodeTiny}",
+				"{!abodeTiny}",
+				"{!abodeTiny}",
+				"{!abodeTiny}",
+				"cabins",
+				"wattle and daub houses"
+			]
+		},
+		{
+			"name": "abodeSmall",
+			"entries": [
+				"{!abodeLittle}",
+				"{!abodeLittle}",
+				"{!abodeLittle}",
+				"{!abodeLittle}",
+				"{!abodeLittle}",
+				"{!abodeLittle}",
+				"stone houses",
+				"timber houses",
+				"brick houses",
+				"a small manor"
+			]
+		},
+		{
+			"name": "abodeMedium",
+			"entries": [
+				"{!abodeSmall}",
+				"{!abodeSmall}",
+				"{!abodeSmall}",
+				"cottage",
+				"medium manor",
+				"ranch"
+			]
+		},
+		{
+			"name": "abodeLarge",	
+			"entries": [
+				"{!abodeMedium}",
+				"{!abodeMedium}",
+				"{!abodeMedium}",
+				"{!abodeMedium}",
+				"{!abodeMedium}",
+				"{!abodeMedium}",
+				"brick houses",
+				"tudor houses",
+				"large manors",
+				"a mansion"
+			]
+		},
+		{
+			"name":"landArrangement",
+			"entries": [
+				"has a {landFeature} nearby",
+				"is situated near a {landFeature}",
+				"has been built near a {landFeature}",
+				"has a {landFeature} in the distance"
+			]
+		},
+		{
+			"name": "landFeature",
+			"entries": [
+				"river and pond",
+				"field",
+				"forest",
+				"meadow",
+				"pasture",
+				"woodland",
+				"marsh"
+			]
+		},
+		{
+			"name": "bldTiny",
+			"entries": [
+				"shrine",
+				"well",
+				"garden"
+			]
+		},
+		{
+			"name": "bldLittle",
+			"entries": [
+				"{!bldTiny}",
+				"{!bldTiny}",
+				"{!bldTiny}",
+				"temple",
+				"warehouse",
+				"schoolhouse",
+				"constable's quarters"
+			]
+		},
+		{
+			"name": "bldSmall",
+			"entries": [
+				"{!bldLittle}",
+				"{!bldLittle}",
+				"{!bldLittle}",
+				"school",
+				"town square",
+				"watch house",
+				"priest’s parsonage",
+				"small manor house",
+				"inn",
+				"tavern",
+				"brewery",
+				"butcher"
+			]
+		},
+		{
+			"name": "bldMedium",
+			"entries": [
+				"{!bldSmall}",
+				"{!bldSmall}",
+				"{!bldSmall}",
+				"{!bldSmall}",
+				"{!bldSmall}",
+				"{!bldSmall}",
+				"{!bldSmall}",
+				"craftsman's guild",
+				"great hall",
+				"fortune teller",
+				"barracks",
+				"guard's quarters",
+				"jail",
+				"knight’s motte and bailey",
+				"abbey",
+				"monastery",
+				"large manor house",
+				"alchemist",
+				"armorsmith",
+				"barber",
+				"guild house",
+				"market",
+				"moneychanger",
+				"scribe",
+				"weaponsmith",
+				"fletcher",
+				"leatherworker",
+				"pastrycook",
+				"weaver",
+				"orphanage"
+			]
+		},
+		{
+			"name": "bldLarge",
+			"entries": [
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"{!bldMedium}",
+				"architect's guild",
+				"courtesan's guild",
+				"mage's guild",
+				"mummer's guild",
+				"physician's guild",
+				"tinkerer's guild",
+				"glassmaker's shop",
+				"theater",
+				"university",
+				"enchantment shop",
+				"magic item shop",
+				"spellscroll shop",
+				"almshouse",
+				"boatmaker",
+				"gunsmith",
+				"ropemaker",
+				"tailor & cobbler",
+				"wagonmaker",
+				"locksmith",
+				"winery"
+			]
+		},
+		{
+			"name": "Economy",
+			"entries": [
+				{
+					"m":2,
+					"v":"hunting",
+					"set": {
+						"reqBld":"{huntingBuildings}"
+					}
+				},	{
+					"m":2,
+					"v":"farming",
+					"set": {
+						"reqBld":"{farmingReqBuildings}",
+						"OptBld":"{farmingOptBuildings}"
+					}
+				},
+				{
+					"m":1,
+					"v":"{farmingResource} farming",
+					"set": {
+						"reqBld":"{farmingReqBuildings}",
+						"OptBld":"{farmingOptBuildings}"
+						}
+				},
+				{
+					"m":2,
+					"v":"mining",
+					"set": {
+						"reqBld":"{miningReqBuildings}",
+						"OptBld":"{miningOptBuildings}"
+					}
+				},
+				{
+					"m":1,
+					"v":"{miningResource} mining",
+					"set": {
+						"reqBld":"{miningReqBuildings}",
+						"OptBld":"{miningOptBuildings}"
+					}
+				},
+				{
+					"m":2,
+					"v":"quarry",
+					"set": {
+						"reqBld":"{quarryReqBuildings}",
+						"OptBld":"{quarryOptBuildings}"
+					}
+				},
+				{
+					"m":1,
+					"v":"{quarryResource} quarry",
+					"set": {
+						"reqBld":"{quarryReqBuildings}",
+						"OptBld":"{quarryOptBuildings}"
+					}
+				},
+				{
+					"m":2,
+					"v":"fishing",
+					"set": {
+						"reqBld":"{fishingReqBuildings}",
+						"OptBld":"{fishingOptBuildings}"
+					}
+				},
+				{
+					"m":1,
+					"v":"{fishingResource} fishing",
+					"set": {
+						"reqBld":"{fishingReqBuildings}",
+						"OptBld":"{fishingOptBuildings}"
+					}
+				},
+				{
+					"m":2,
+					"v":"logging",
+					"set": {
+						"reqBld":"{loggingReqBuildings}",
+						"OptBld":"{loggingOptBuildings}"
+					}
+				},
+				{
+					"m":1,
+					"v":"{loggingResource} logging",
+					"set": {
+						"reqBld":"{loggingReqBuildings}",
+						"OptBld":"{loggingOptBuildings}"
+					}
+				},
+				{
+					"m":2,
+					"v":"trading",
+					"set": {
+						"reqBld":"{tradingReqBuildings}",
+						"OptBld":"{tradingOptBuildings}"
+					}
+				},
+				{
+					"m":2,
+					"v":"magical study",
+					"set": {
+						"reqBld":"{magicalBuildings}"
+					}
+				},
+				{
+					"m":1,
+					"v":"{livestockResource}"
+				},
+			]
+		},
+		{
+			"name": "magicalBuildings",
+			"entries": [
+				"a university",
+				"a wizard's tower",
+				"a druid tribe"
+			]
+		},
+		{
+			"name": "huntingBuildings",
+			"entries": [
+				"a furrier's house",
+				"a jerky shop"
+			]
+		},
+		{
+			"name": "farmingReqBuildings",
+			"entries": [
+				"a large barn",
+				"a medium barn",
+				"a pasture",
+				"a large open field",
+				"grain field",
+				"vegetable patch",
+				"orchard",
+				"vineyard"
+			]
+		},
+		{
+			"name": "farmingOptBuildings",
+			"entries": [
+				"stables",
+				"a pen",
+				"a tanner's shop",
+				"a meat smoking plant",
+				"a granary",
+				"a butcher's shop"
+			]
+		},
+		{
+			"name": "miningReqBuildings",
+			"entries": [
+				"a foundry",
+				"an ore crushing mill",
+				"an ore crushing plant"
+			]
+		},
+		{
+			"name": "miningOptBuildings",
+			"entries": [
+				"a blacksmith's workshop",
+				"a toolmaker's shop"
+			]
+		},
+		{
+			"name": "quarryReqBuildings",
+			"entries": [
+				"a stone cutting mill",
+				"a stone cutting plant"
+			]
+		},
+		{
+			"name": "quarryOptBuildings",
+			"entries": [
+				"a stonemason's workshop",
+				"a sculptor's workshop"
+			]
+		},
+		{
+			"name": "fishingReqBuildings",
+			"entries": [
+				"a large lake with fishingboats along a dock",
+				"a large, lazy river"
+			]
+		},
+		{
+			"name": "fishingOptBuildings",
+			"entries": [
+				"a fish hatchery",
+				"a huge beach"
+			]
+		},
+		{
+			"name": "loggingReqBuildings",
+			"entries": [
+				"a sawmill",
+				"a lumber processing shop"
+			]
+		},
+		{
+			"name": "loggingOptBuildings",
+			"entries": [
+				"a charcoal processing plant",
+				"a carpenter's workshop"
+			]
+		},
+		{
+			"name": "tradingReqBuildings",
+			"entries": [
+				"a market",
+				"a bazaar",
+				"a trading center"
+			]
+		},
+		{
+			"name": "tradingOptBuildings",
+			"entries": [
+				"a moneychanger",
+				"a bank"
+			]
+		},
+		{
+			"name": "farmingResource",
+			"entries": [
+				{
+				  "m": 15,
+				  "v": "wheat"
+				},
+				{
+				  "m": 10,
+				  "v": "potato"
+				},
+				{
+				  "m": 8,
+				  "v": "fruit/vegetable"
+				},
+				{
+				  "m": 6,
+				  "v": "rice"
+				},
+				{
+				  "m": 6,
+				  "v": "maize"
+				},
+				{
+				  "m": 6,
+				  "v": "herb"
+				},
+				{
+				  "m": 5,
+				  "v": "cotton"
+				},
+				{
+				  "m": 4,
+				  "v": "tobacco"
+				},
+				{
+				  "m": 4,
+				  "v": "coffee"
+				},
+				{
+				  "m": 3,
+				  "v": "spice"
+				},
+				{
+				  "m": 2,
+				  "v": "tea"
+				},
+				{
+				  "m": 2,
+				  "v": "sugarcane"
+				},
+				{
+				  "m": 2,
+				  "v": "coconut"
+				},
+				"rubber"
+			]
+		},
+		{
+			"name": "miningResource",
+			"entries": [
+				{
+				  "m": 4,
+				  "v":"{minedStone}",
+					"set": {
+						"reqBld":"a stone cutting mill"
+					}
+				},
+				{
+				  "m": 2,
+				  "v":"{minedMetal}",
+					"set": {
+						"reqBld":"an ore processing mill"
+					}
+				},
+				{
+				  "m": 1,
+				  "v":"{minedGems}",
+					"set": {
+						"reqBld":"a gemcutter's workshop"
+					}
+				}
+			]
+		},
+		{
+			"name": "minedStone",
+			"entries": [
+				{
+				  "m": 4,
+				  "v": "stone"
+				},
+				{
+				  "m": 2,
+				  "v": "gravel"
+				},{
+				  "m": 3,
+				  "v": "coal"
+				},
+				{
+				  "m": 1,
+				  "v": "rock salt"
+				}
+			]
+		},
+		{
+			"name": "minedMetal",
+			"entries": [
+				{
+				  "m": 6,
+				  "v": "tin"
+				},
+				{
+				  "m": 6,
+				  "v": "copper"
+				},
+				{
+				  "m": 6,
+				  "v": "lead"
+				},
+				{
+				  "m": 4,
+				  "v": "iron"
+				},
+				{
+				  "m": 4,
+				  "v": "silver"
+				},
+				{
+				  "m": 3,
+				  "v": "tungsten"
+				},
+				{
+				  "m": 2,
+				  "v": "platinum"
+				},
+				{
+				  "m": 1,
+				  "v": "gold"
+				}
+			]
+		},
+		{
+			"name": "minedGems",
+			"entries": [
+				{
+				  "m": 8,
+				  "v": "gemstone"
+				},
+				{
+				  "m": 4,
+				  "v": "semi-precious gemstone"
+				},
+				{
+				  "m": 2,
+				  "v": "precious gemstone"
+				},
+				{
+				  "m": 1,
+				  "v": "crystal"
+				}
+			]
+		},
+		{
+			"name": "quarryResource",
+			"entries": [
+				"granite",
+				"limestone",
+				"marble",
+				"quartz",
+				"sandstone",
+				"slate"
+			]
+		},
+		{
+			"name": "fishingResource",
+			"entries": [
+				"carp",
+				"tilapia",
+				"salmon",
+				"catfish"
+			]
+		},
+		{
+			"name": "livestockResource",
+			"entries": [
+				{
+				  "m": 15,
+				  "v": "livestock",
+					"set": {
+						"reqBld":"a barn and a large pasture populated with many animals"
+					}
+				},
+				{
+				  "m": 10,
+				  "v": "sheep",
+					"set": {
+						"reqBld":"a pasture"
+					}
+				},
+				{
+				  "m": 8,
+				  "v": "horse",
+					"set": {
+						"reqBld":"a large field"
+					}
+				},
+				{
+				  "m": 8,
+				  "v": "cattle",
+					"set": {
+						"reqBld":"a barn"
+					}
+				},
+				{
+				  "m": 6,
+				  "v": "chicken",
+					"set": {
+						"reqBld":"several chicken pens"
+					}
+				},
+				{
+				  "m": 4,
+				  "v": "pig",
+					"set": {
+						"reqBld":"a barn with a patch of mud"
+					}
+				},
+				{
+				  "m": 3,
+				  "v": "goat",
+					"set": {
+						"reqBld":"a barn"
+					}
+				},
+				{
+				  "m": 2,
+				  "v": "turkey",
+					"set": {
+						"reqBld":"a barn"
+					}
+				},
+				{
+				  "m": 2,
+				  "v": "geese",
+					"set": {
+						"reqBld":"a fenced in field containing a small lake"
+					}
+				},
+				{
+				  "m": 2,
+				  "v": "duck",
+					"set": {
+						"reqBld":"a fenced in field containing a small lake"
+					}
+				},
+				{
+				  "m": 1,
+				  "v": "pidgeon",
+					"set": {
+						"reqBld":"several pidgeon cages and perches scattered about"
+					}
+				} 
+			]
+		},
+		{
+			"name": "loggingResource",
+			"entries": [
+				{
+				  "m": 5,
+				  "v": "oak"
+				},
+				{
+				  "m": 3,
+				  "v": "fir"
+				},
+				{
+				  "m": 3,
+				  "v": "larch"
+				},
+				{
+				  "m": 3,
+				  "v": "cedar"
+				},
+				{
+				  "m": 3,
+				  "v": "pine"
+				},
+				{
+				  "m": 3,
+				  "v": "spruce"
+				},
+				{
+				  "m": 2,
+				  "v": "maple"
+				},
+				"beech",
+				"ash",
+				"mahogany",
+				"walnut",
+				"cherry",
+				"birch"
+			]
+		}
+	]
+}
