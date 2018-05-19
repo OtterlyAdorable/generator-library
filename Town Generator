@@ -2,7 +2,7 @@
 	"name": "Town Generator",
 	"resultPattern": "{var:generateTown}",
 	"variables": {
-		"generateTown":"This is a {TownSize} {Economy} {var:called} with a population of {var:pop}. It {landArrangement}.\nHome Types:\r\t• {var:abodes}\nEconomy Features: \r\t• {var:reqBld}\nOther Buildings:\r\t• {var:buildings}",
+		"generateTown":"This is a {TownSize} {Economy} {var:called} with a population of {var:pop} people. It {landArrangement}.\nHome Types:\r\t• {var:abodes}\nEconomy Features: \r\t• {var:reqBld}\nOther Buildings:\r\t• {var:buildings}",
 		"abodes": "{var:abode{var:size}{var:abodeNo}}",
 		"abodeTiny1":"{!abodeTiny}",
 		"abodeTiny2":"{var:abodeTiny1}\r\t• {!abodeTiny}",
